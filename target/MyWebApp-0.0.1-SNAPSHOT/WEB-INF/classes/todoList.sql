@@ -1,12 +1,14 @@
+
 CREATE TABLE projects (
 		id SERIAL PRIMARY KEY,
-		name varchar(20) NOT NULL
+		name varchar(30) NOT NULL
 
 );
 
 CREATE TABLE task (
 		id SERIAL PRIMARY KEY,
-		name varchar(20) NOT NULL
+		name varchar(30) NOT NULL,
+		date TIMESTAMP
 );
 
 
@@ -18,14 +20,14 @@ CREATE TABLE projects_tasks (
 );
 
 INSERT INTO projects VALUES
-        (NEXTVAL('projects_id_seq'), 'SR-01'),
-        (NEXTVAL('projects_id_seq'), 'SR-02');
+        (NEXTVAL('projects_id_seq'), 'Make the test task'),
+        (NEXTVAL('projects_id_seq'), 'For home');
 
 INSERT INTO task VALUES
-        (NEXTVAL('task_id_seq'), 'Coillot'),
-        (NEXTVAL('task_id_seq'), 'Eckford'),
-        (NEXTVAL('task_id_seq'), 'Arango'),
-        (NEXTVAL('task_id_seq'), 'Robstone'); 
+        (NEXTVAL('task_id_seq'), 'Write code', '2017-05-16 11:30:00'),
+        (NEXTVAL('task_id_seq'), 'Fix bugs', '2017-05-12 11:30:00'),
+        (NEXTVAL('task_id_seq'), 'Eat', '2017-05-13 11:30:00'),
+        (NEXTVAL('task_id_seq'), 'Clean dish', '2017-05-14 11:30:00'); 
  
 INSERT INTO projects_tasks VALUES
         (1, 1),

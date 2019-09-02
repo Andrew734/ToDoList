@@ -8,45 +8,54 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Current Projects</title>
+
+<style type="text/css">
+    body{
+        text-align: center;
+    }
+    table {
+        margin-left: 15%;
+        min-width: 70%;
+        border: 1px solid #CCC;
+        border-collapse: collapse;
+    }
+    table tr{line-height: 30px;}
+    table tr th { background: #4C4C70; color: #FFF;}
+    table tr td { border:1px solid #CCC; margin: 5px;}
+    input[type=text], input[type=email], input[type=tel]{
+        min-width: 60%;
+    }
+    input[type=submit], a{
+        background: green;
+        padding: 5px;
+        margin: 5px;
+        color: #FFF;
+    }
+    a{
+        text-decoration: none;
+    }
+</style>
+
 </head>
 <body>
-
-
-    <table>
-        <thead>
-            
-        </thead>
-        <tbody>
             <c:forEach items="${projects}" var="project">
+              <table>
+              <thead>
+            
+              </thead>
+              <tbody>
                 <tr>
-                  <th>Id</th>
-                  <th> Project</th>
+                  <th colspan="1">Id</th>
+                  <th colspan="3"> Project</th>
                   <th colspan="2">Action</th>
                  </tr>
                 <tr>
                      
-<%--                   <td> <form action="project" method="post">
-                    <fieldset>
-                      <div>
-                        <label for="id">Project ID</label> <input type="text"
-                               name="id" value="<c:out value="${project.id}" />"
-                               readonly="readonly" placeholder="Project ID" />
-                      </div>
-                      <div>
-                        <label for="name">Name</label> <input type="text"
-                               name="name" value="<c:out value="${project.name}" />"
-                               placeholder="name" />
-                      </div>
-                      <div>
-                        <input type="submit" value="Update project info" />
-                      </div>
-                  </fieldset>
-                    </form></td> --%>
-                   <td><span style="font-size: 18px; line-height: 16px;">
+                   <td ><span style="font-size: 18px; line-height: 16px;">
                          <b><c:out value="${project.id}"/></b><br></span> </td>
-                    <td><span style="font-size: 18px; line-height: 16px;">
+                    <td colspan="2"><span style="font-size: 18px; line-height: 16px;">
                          <b><c:out value="${project.name}"/></b><br></span> </td>
-                    <td><a
+                    <td colspan="2"><a
                         href="project?id=<c:out value="${project.id}" />">Update</a></td>
                     <td> 
                         <form action="deleteProject" method="post">
@@ -59,7 +68,7 @@
                         </form> 
                     </td>
                     <tr> 
-                      <td colspan=4 height=10>
+                      <td colspan=6 height=10>
                         <form action="${context}/project/addTask" method="post">
                          <fieldset>
                             <legend>Add new task:</legend>
@@ -68,10 +77,7 @@
                               <label for="name">Name</label> <input type="text"
                                      name="name" value="<c:out value="${task.name}" />"
                                      placeholder="name" />
-                            <!-- </div> -->
-                            <!-- <div> -->
                               <input type="hidden" value="${project.id}" name="projectId">
-                              <%-- <input type="hidden" value="${name}" name="taskName"> --%>
                               <input type="submit" value="Submit" />
                             </div>
                          </fieldset>
@@ -86,6 +92,7 @@
                             <th> Name of Task</th>
                             <th colspan="2">Action</th>
                             <th colspan="1">Done</th>
+                            <th colspan="2">Deadline</th>
                             </tr>
                       </thead>
                  
@@ -101,14 +108,19 @@
                     <td><a
                     href="task?id=<c:out value="${task.id}" />">Update</a></td>
                     <td><input type="checkbox" ></td>
-                    <td><c:out value="${startDate}" /></td>
-                      <fmt:formatDate var="endDate" value="${semesterSchedule.endDate.getTime()}" pattern="yyyy-MM-dd HH:mm"  />
+                    
+                    <fmt:formatDate var="endDate" value="${task.date.getTime()}" pattern="yyyy-MM-dd HH:mm"  />
+                    <td><c:out value="${endDate}" /></td>
                </tr>  
                          
                 </c:forEach>
+              </tbody>
+              </table>
+              <br>
+              <br>
+              <br>
             </c:forEach>
-        </tbody>
-    </table>
+    
      <form action="projects" method="post">
         <fieldset>
         <h2> Add new project</h2>
@@ -122,6 +134,7 @@
             </div>
         </fieldset>
     </form>
+    
     <a href="index.jsp"><c:out value="Back to Start page" /></a> <br> <br> 
 </body>
 </html>

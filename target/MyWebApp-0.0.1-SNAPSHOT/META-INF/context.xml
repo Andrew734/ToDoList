@@ -5,9 +5,9 @@
       auth="Container" 
       type="javax.sql.DataSource" 
       driverClassName="org.postgresql.Driver" 
-      url="jdbc:postgresql:mywebapp"
-      username="postgres" 
-      password="root" 
+      url="jdbc:postgresql://ec2-176-34-184-174.eu-west-1.compute.amazonaws.com:5432/d3l7kd0a0c992d"
+      username="rqcpjxwzcjwnbl" 
+      password="bbb71f8ce2722d5bcdf49ba3c7e918724aec9464190e187771f7822cd556add5" 
       
       maxActive="100" 
       maxIdle="20" 

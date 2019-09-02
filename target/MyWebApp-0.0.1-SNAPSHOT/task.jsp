@@ -21,19 +21,15 @@
                     name="name" value="<c:out value="${task.name}" />"
                     placeholder="name" />
             </div>
+            
+            
+   			<input type=datetime name="endDate" value= "2017-01-13 20:00:00">
+   			
             <div>
                 <input type="submit" value="Update task info" />
             </div>
         </fieldset>
     </form>
     
-<%--      <form action="task/delete" method="post">
-        <fieldset>
-            <div>
-            	<input type="hidden" name="id" value="<c:out value="${task.id}" />" />
-                <input type="submit" value="Delete task" />
-            </div>
-        </fieldset>
-    </form> --%>
 </body>
 </html>
