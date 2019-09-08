@@ -18,4 +18,5 @@ servlets\project\ProjectServlet.class
 service\TaskService.class
 servlets\task\UpdateTaskServlet.class
 dao\TimestampConverter.class
+domain\ProjectTest.class
 dao\CrudDao.class

@@ -9,6 +9,7 @@ C:\Users\home\eclipse-workspace\MyWebApp\src\main\java\dao\jdbc\ProjectDaoJdbc.j
 C:\Users\home\eclipse-workspace\MyWebApp\src\main\java\dao\ProjectDao.java
 C:\Users\home\eclipse-workspace\MyWebApp\src\main\java\dao\DAOException.java
 C:\Users\home\eclipse-workspace\MyWebApp\src\main\java\service\TaskService.java
+C:\Users\home\eclipse-workspace\MyWebApp\src\test\java\domain\ProjectTest.java
 C:\Users\home\eclipse-workspace\MyWebApp\src\main\java\service\ServiceException.java
 C:\Users\home\eclipse-workspace\MyWebApp\src\main\java\servlets\task\TaskServlet.java
 C:\Users\home\eclipse-workspace\MyWebApp\src\main\java\dao\TimestampConverter.java
